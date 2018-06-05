@@ -17,6 +17,9 @@ pipeline {
             }
         }
         stage("Test") {
+            steps {
+                echo "Starting Tests"
+            }
             post {
                 always {
                     echo "Done Tests"
@@ -26,6 +29,9 @@ pipeline {
         stage("Deploy") {
             when {
                 branch "master"
+            }
+            steps {
+                echo "Starting Deploy"
             }
             post {
                 always {
