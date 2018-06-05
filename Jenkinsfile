@@ -1,4 +1,4 @@
-pipline {
+pipeline {
     agent any
     environment {
         bat "source C:\\Users\\Developer\\Documents\\Environments\\General\\Scripts\\Python.exe"
