@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    bat "source C:\\Users\\Developer\\Documents\\Environments\\General\\Scripts\\Python.exe"
     options {
         timeout(time: 1, unit: "HOURS")
         timestamps()
@@ -8,6 +7,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
+                bat "source C:\\Users\\Developer\\Documents\\Environments\\General\\Scripts\\Python.exe"
                 bat "pip install -r REQUIREMENTS"
             }
             post {
@@ -17,9 +17,6 @@ pipeline {
             }
         }
         stage("Test") {
-            steps {
-                //
-            }
             post {
                 always {
                     echo "Done Tests"
@@ -29,9 +26,6 @@ pipeline {
         stage("Deploy") {
             when {
                 branch "master"
-            }
-            steps {
-                //
             }
             post {
                 always {
