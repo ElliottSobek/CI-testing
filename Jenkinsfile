@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        bat "source C:\\Users\\Developer\\Documents\\Environments\\General\\Scripts\\Python.exe"
-    }
+    bat "source C:\\Users\\Developer\\Documents\\Environments\\General\\Scripts\\Python.exe"
     options {
         timeout(time: 1, unit: "HOURS")
         timestamps()
