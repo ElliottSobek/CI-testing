@@ -25,9 +25,6 @@ pipeline {
             when {
                 branch "master"
             }
-            steps {
-                echo "Starting Deploy"
-            }
             post {
                 always {
                     echo "Done Deploy"
