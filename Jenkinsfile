@@ -8,7 +8,7 @@ pipeline {
         stage("Build") {
             steps {
                 bat 'C:\\\\Users\\\\Elliott\\\\Documents\\\\Environments\\\\General\\\\Scripts\\\\activate'
-                bat "pip install -r REQUIREMENTS"
+                // bat "pip install -r REQUIREMENTS"
             }
             post {
                 always {
