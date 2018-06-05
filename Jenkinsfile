@@ -10,11 +10,6 @@ pipeline {
                 bat 'C:\\\\Users\\\\Elliott\\\\Documents\\\\Environments\\\\General\\\\Scripts\\\\activate'
                 // bat "pip install -r REQUIREMENTS"
             }
-            post {
-                always {
-                    echo "Done Build"
-                }
-            }
         }
         stage("Test") {
             steps {
