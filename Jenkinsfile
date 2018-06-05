@@ -8,12 +8,12 @@ pipeline {
         stage("Build") {
             steps {
                 bat 'C:\\\\Users\\\\Elliott\\\\Documents\\\\Environments\\\\General\\\\Scripts\\\\activate'
-                // bat "pip install -r REQUIREMENTS"
+                bat "pip install -r REQUIREMENTS"
             }
         }
         stage("Test") {
             steps {
-                echo "Starting Tests"
+                bat "python -m unittest testmain.TestMain"
             }
             post {
                 always {
