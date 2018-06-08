@@ -11,7 +11,7 @@ class TestMain(unittest.TestCase):
     main = Main()
 
     def test_add_good(self):
-        self.assertEqual(1, self.main.add(1, 1))
+        self.assertEqual(2, self.main.add(1, 1))
 
     def test_add_bad(self):
         self.assertNotEqual(1, self.main.add(1, 1))
