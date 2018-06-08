@@ -1,6 +1,9 @@
 import unittest
 from decimal import Decimal
 
+from teamcity import is_running_under_teamcity
+from teamcity.unittestpy import TeamcityTestRunner
+
 from main import Main
 
 
@@ -24,3 +27,11 @@ class TestMain(unittest.TestCase):
 
     def test_root_good(self):
         self.assertNotEqual(Decimal("1"), self.main.root(2))
+
+
+if __name__ == '__main__':
+    if is_running_under_teamcity():
+        runner = TeamcityTestRunner()
+    else:
+        runner = unittest.TextTestRunner()
+    unittest.main(testRunner=runner)
